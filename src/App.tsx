@@ -5,7 +5,7 @@ function App() {
   const [isToggled, setIsToggled] = useState(false);
 
   return (
-    <div className={`${isToggled ? "bg-[#121721]" : "bg-[#FFF]"} h-full`}>
+    <div className={`${isToggled ? "bg-[#121721]" : "bg-[#F4F6F8]"} h-full`}>
       <Header isToggled={isToggled} setIsToggled={setIsToggled} />
     </div>
   );
