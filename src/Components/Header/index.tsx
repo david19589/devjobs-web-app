@@ -4,10 +4,17 @@ import HeaderBackgroundTablet from "/src/assets/desktop/bg-pattern-header.svg";
 import SunSvg from "/src/assets/desktop/icon-sun.svg";
 import MoonSvg from "/src/assets/desktop/icon-moon.svg";
 import Toggle from "../Toggle";
+import Filter from "../Filter";
 
 function Header(props: {
   isToggled: boolean;
   setIsToggled: React.Dispatch<React.SetStateAction<boolean>>;
+  searchValue: string;
+  onSearch: (value: string) => void;
+  locationSearchValue: string;
+  onLocationSearch: (value: string) => void;
+  isChecked: boolean;
+  setIsChecked: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <div>
@@ -35,6 +42,15 @@ function Header(props: {
             <img src={MoonSvg} alt="MoonSvg" />
           </div>
         </div>
+        <Filter
+          isToggled={props.isToggled}
+          searchValue={props.searchValue}
+          onSearch={props.onSearch}
+          locationSearchValue={props.locationSearchValue}
+          onLocationSearch={props.onLocationSearch}
+          isChecked={props.isChecked}
+          setIsChecked={props.setIsChecked}
+        />
       </div>
     </div>
   );
