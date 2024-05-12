@@ -14,6 +14,7 @@ function Filter(props: {
   const [filterClicked, setFilterClicked] = useState(false);
   const [titleSearch, setTitleSearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
+  // const [checkedBg, setCheckedBg] = useState(false);
 
   return (
     <>
@@ -66,30 +67,35 @@ function Filter(props: {
             />
             <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
           </div>
-          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px] ">
+          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px] group">
             <div
               onClick={() => {
                 props.setIsChecked(!props.isChecked);
               }}
-              className={`cursor-pointer w-[24px] h-[24px] rounded mr-[16px] ${
-                props.isChecked
-                  ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
-                  : props.isToggled
-                  ? "bg-[#FFF]"
-                  : "bg-[#19202D] opacity-[10%]"
-              }`}
-            ></div>
-            <h1
-              className={`${
-                props.isToggled && "text-[#FFF]"
-              } font-[700] text-[12px] leading-[19.84px] w-max`}
+              className="flex items-center cursor-pointer"
             >
-              Full Time Only
-            </h1>
+              <div
+                className={`w-[24px] h-[24px] rounded mr-[16px] ${
+                  props.isChecked
+                    ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
+                    : props.isToggled
+                    ? "bg-[#FFF]"
+                    : "bg-[#19202D] opacity-[10%]"
+                }`}
+              ></div>
+              <h1
+                className={`${
+                  props.isToggled && "text-[#FFF]"
+                } font-[700] text-[12px] leading-[19.84px] w-max`}
+              >
+                Full Time Only
+              </h1>
+            </div>
           </div>
           <button
             onClick={() => {
               props.onSearch(titleSearch);
+              props.onLocationSearch(locationSearch);
             }}
             className="hidden tablet:flex px-[14px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
           >
@@ -136,6 +142,7 @@ function Filter(props: {
               alt="SearchSvg"
               onClick={() => {
                 props.onSearch(titleSearch);
+                props.onLocationSearch(locationSearch);
               }}
             />
           </div>
