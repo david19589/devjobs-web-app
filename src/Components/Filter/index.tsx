@@ -44,12 +44,9 @@ function Filter(props: {
               placeholder="Filter by title…"
               onChange={(e) => {
                 setTitleSearch(e.target.value);
-                if (e.target.value === "") {
-                  props.onSearch("");
-                }
               }}
             />
-            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
+            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-16px]"></span>
           </div>
           <div className="hidden tablet:flex tablet:mr-[24px]">
             <img
@@ -65,55 +62,18 @@ function Filter(props: {
               placeholder="Filter by location…"
               onChange={(e) => {
                 setLocationSearch(e.target.value);
-                if (e.target.value === "") {
-                  props.onLocationSearch("");
-                }
               }}
             />
-            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
+            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-16px]"></span>
           </div>
-          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px]">
-            <div
-              onClick={() => {
-                props.setIsChecked(!props.isChecked);
-              }}
-              className="flex items-center cursor-pointer"
-            >
-              <div
-                className={`w-[24px] h-[24px] rounded mr-[16px] ${
-                  props.isChecked
-                    ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
-                    : props.isToggled
-                    ? "bg-[#FFF]"
-                    : "bg-[#19202D] opacity-[10%]"
-                }`}
-              ></div>
-              <h1
-                className={`${
-                  props.isToggled && "text-[#FFF]"
-                } font-[700] text-[12px] leading-[19.84px] w-max`}
-              >
-                Full Time Only
-              </h1>
-            </div>
-          </div>
-          <button
-            onClick={() => {
-              props.onSearch(titleSearch);
-              props.onLocationSearch(locationSearch);
-            }}
-            className="hidden tablet:flex px-[14px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
-          >
-            Search
-          </button>
-          <div className="tablet:hidden flex items-center relative right-[24px]">
+          <div className="flex items-center relative right-[24px] tablet:right-0 desktop:ml-[40px]">
             <div
               onClick={() => {
                 setFilterClicked(!filterClicked);
                 props.onLocationSearch("");
                 setLocationSearch("");
               }}
-              className="mr-[24px]"
+              className="mr-[24px] tablet:hidden"
             >
               {props.isToggled ? (
                 <svg
