@@ -44,6 +44,9 @@ function Filter(props: {
               placeholder="Filter by title…"
               onChange={(e) => {
                 setTitleSearch(e.target.value);
+                if (e.target.value === "") {
+                  props.onSearch("");
+                }
               }}
             />
             <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-16px]"></span>
@@ -62,11 +65,51 @@ function Filter(props: {
               placeholder="Filter by location…"
               onChange={(e) => {
                 setLocationSearch(e.target.value);
+                if (e.target.value === "") {
+                  props.onLocationSearch("");
+                }
               }}
             />
             <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-16px]"></span>
           </div>
-          <div className="flex items-center relative right-[24px] tablet:right-0 desktop:ml-[40px]">
+          <div
+            onClick={() => {
+              props.setIsChecked(!props.isChecked);
+            }}
+            className="hidden tablet:flex items-center mr-[50px]"
+          >
+            <div className="flex items-center cursor-pointer">
+              <div
+                onClick={() => {
+                  props.setIsChecked(!props.isChecked);
+                }}
+                className={`cursor-pointer w-[24px] h-[24px] rounded mr-[16px] ${
+                  props.isChecked
+                    ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
+                    : props.isToggled
+                    ? "bg-[#FFF]"
+                    : "bg-[#19202D] opacity-[10%]"
+                }`}
+              ></div>
+              <h1
+                className={`${
+                  props.isToggled && "text-[#FFF]"
+                } font-[700] text-[12px] leading-[19.84px] w-max`}
+              >
+                Full Time Only
+              </h1>
+            </div>
+          </div>
+          <button
+            onClick={() => {
+              props.onSearch(titleSearch);
+              props.onLocationSearch(locationSearch);
+            }}
+            className="px-[30px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
+          >
+            Search
+          </button>
+          <div className="tablet:hidden flex items-center relative right-[24px]">
             <div
               onClick={() => {
                 setFilterClicked(!filterClicked);
