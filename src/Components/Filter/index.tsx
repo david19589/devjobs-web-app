@@ -22,18 +22,80 @@ function Filter(props: {
           props.isToggled ? "bg-[#19202D]" : "bg-[#FFF]"
         } rounded-lg my-[32px]`}
       >
-        <div className="flex pl-[24px] pr-[16px] py-[16px]">
-          <input
-            className={`${
-              props.isToggled && "text-[#FFF] bg-[#19202D]"
-            } font-[400] text-[16px] leading-[19.84px] outline-none w-full mr-[12px]`}
-            id="search"
-            placeholder="Filter by title…"
-            onChange={(e) => {
-              setTitleSearch(e.target.value);
+        <div className="tablet:justify-center flex justify-between items-center pl-[24px] pr-[16px] py-[16px]">
+          <div className="tablet:flex tablet:mr-[24px]">
+            <svg
+              className="hidden tablet:flex mr-[16px] self-center"
+              width="30"
+              height="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.112 15.059h-1.088l-.377-.377a8.814 8.814 0 002.15-5.784A8.898 8.898 0 008.898 0 8.898 8.898 0 000 8.898a8.898 8.898 0 008.898 8.899c2.211 0 4.23-.808 5.784-2.143l.377.377v1.081l6.845 6.832 2.04-2.04-6.832-6.845zm-8.214 0A6.16 6.16 0 118.9 2.737a6.16 6.16 0 010 12.322z"
+                fill="#5964E0"
+                fillRule="nonzero"
+              />
+            </svg>
+            <input
+              className={`${
+                props.isToggled && "text-[#FFF] bg-[#19202D]"
+              } font-[400] text-[16px] leading-[19.84px] outline-none w-full mr-[12px]`}
+              id="search"
+              placeholder="Filter by title…"
+              onChange={(e) => {
+                setTitleSearch(e.target.value);
+              }}
+            />
+            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
+          </div>
+          <div className="hidden tablet:flex tablet:mr-[24px]">
+            <img
+              className="mr-[16px] self-center"
+              src={LocationSvg}
+              alt="LocationSvg"
+            />
+            <input
+              className={`${
+                props.isToggled && "text-[#FFF] bg-[#19202D]"
+              } font-[400] text-[16px] leading-[19.84px] outline-none w-full mr-[12px]`}
+              id="search2"
+              placeholder="Filter by location…"
+              onChange={(e) => {
+                setLocationSearch(e.target.value);
+              }}
+            />
+            <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
+          </div>
+          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px] ">
+            <div
+              onClick={() => {
+                props.setIsChecked(!props.isChecked);
+              }}
+              className={`cursor-pointer w-[24px] h-[24px] rounded mr-[16px] ${
+                props.isChecked
+                  ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
+                  : props.isToggled
+                  ? "bg-[#FFF]"
+                  : "bg-[#19202D] opacity-[10%]"
+              }`}
+            ></div>
+            <h1
+              className={`${
+                props.isToggled && "text-[#FFF]"
+              } font-[700] text-[12px] leading-[19.84px] w-max`}
+            >
+              Full Time Only
+            </h1>
+          </div>
+          <button
+            onClick={() => {
+              props.onSearch(titleSearch);
             }}
-          />
-          <div className="flex items-center relative right-[24px]">
+            className="hidden tablet:flex px-[14px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
+          >
+            Search
+          </button>
+          <div className="tablet:hidden flex items-center relative right-[24px]">
             <div
               onClick={() => {
                 setFilterClicked(!filterClicked);
