@@ -14,7 +14,6 @@ function Filter(props: {
   const [filterClicked, setFilterClicked] = useState(false);
   const [titleSearch, setTitleSearch] = useState("");
   const [locationSearch, setLocationSearch] = useState("");
-  // const [checkedBg, setCheckedBg] = useState(false);
 
   return (
     <>
@@ -45,6 +44,9 @@ function Filter(props: {
               placeholder="Filter by title…"
               onChange={(e) => {
                 setTitleSearch(e.target.value);
+                if (e.target.value === "") {
+                  props.onSearch("");
+                }
               }}
             />
             <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
@@ -63,11 +65,14 @@ function Filter(props: {
               placeholder="Filter by location…"
               onChange={(e) => {
                 setLocationSearch(e.target.value);
+                if (e.target.value === "") {
+                  props.onLocationSearch("");
+                }
               }}
             />
             <span className="hidden tablet:flex w-[1px] bg-[#6E8098] opacity-[20%] my-[-30px]"></span>
           </div>
-          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px] group">
+          <div className="hidden tablet:flex tablet:items-center tablet:mr-[28px] desktop:mr-[40px]">
             <div
               onClick={() => {
                 props.setIsChecked(!props.isChecked);
@@ -105,6 +110,8 @@ function Filter(props: {
             <div
               onClick={() => {
                 setFilterClicked(!filterClicked);
+                props.onLocationSearch("");
+                setLocationSearch("");
               }}
               className="mr-[24px]"
             >
@@ -161,7 +168,7 @@ function Filter(props: {
                 className={`${
                   props.isToggled && "text-[#FFF] bg-[#19202D]"
                 } font-[400] text-[16px] leading-[19.84px] outline-none w-full`}
-                id="search2"
+                id="search3"
                 placeholder="Filter by location…"
                 onChange={(e) => {
                   setLocationSearch(e.target.value);
@@ -174,21 +181,28 @@ function Filter(props: {
                 onClick={() => {
                   props.setIsChecked(!props.isChecked);
                 }}
-                className={`cursor-pointer w-[24px] h-[24px] rounded mr-[16px] ${
-                  props.isChecked
-                    ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
-                    : props.isToggled
-                    ? "bg-[#FFF]"
-                    : "bg-[#19202D] opacity-[10%]"
-                }`}
-              ></div>
-              <h1
-                className={`${
-                  props.isToggled && "text-[#FFF]"
-                } font-[700] text-[16px] leading-[19.84px]`}
+                className="flex items-center cursor-pointer"
               >
-                Full Time Only
-              </h1>
+                <div
+                  onClick={() => {
+                    props.setIsChecked(!props.isChecked);
+                  }}
+                  className={`cursor-pointer w-[24px] h-[24px] rounded mr-[16px] ${
+                    props.isChecked
+                      ? "bg-[#5964E0] bg-no-repeat bg-center bg-[url(/src/assets/desktop/icon-check.svg)]"
+                      : props.isToggled
+                      ? "bg-[#FFF]"
+                      : "bg-[#19202D] opacity-[10%]"
+                  }`}
+                ></div>
+                <h1
+                  className={`${
+                    props.isToggled && "text-[#FFF]"
+                  } font-[700] text-[16px] leading-[19.84px]`}
+                >
+                  Full Time Only
+                </h1>
+              </div>
             </div>
             <div
               onClick={() => {
