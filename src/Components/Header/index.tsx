@@ -24,7 +24,7 @@ function Header(props: {
           alt="HeaderBackgroundTablet"
         />
       </div>
-      <div className="relative z-10 pt-[32px] pb-[72px] px-[24px]">
+      <div className="tablet:px-[40px] desktop:px-[165px] relative z-10 pt-[32px] pb-[72px] px-[24px]">
         <div className="flex justify-between items-center">
           <Link className="flex w-fit" to={"/"}>
             <img src={Logo} alt="Logo" />
