@@ -1,21 +1,21 @@
-import scoot from "src/assets/logos/scoot.svg";
-import blogr from "src/assets/logos/blogr.svg";
-import vector from "src/assets/logos/vector.svg";
-import officelite from "src/assets/logos/officelite.svg";
-import pod from "src/assets/logos/pod.svg";
-import creative from "src/assets/logos/creative.svg";
-import pomodoro from "src/assets/logos/pomodoro.svg";
-import maker from "src/assets/logos/maker.svg";
-import coffeeroasters from "src/assets/logos/coffeeroasters.svg";
-import mastercraft from "src/assets/logos/mastercraft.svg";
-import crowdfund from "src/assets/logos/crowdfund.svg";
-import typemaster from "src/assets/logos/typemaster.svg";
+import scoot from "/src/assets/logos/scoot.svg";
+import blogr from "/src/assets/logos/blogr.svg";
+import vector from "/src/assets/logos/vector.svg";
+import officelite from "/src/assets/logos/officelite.svg";
+import pod from "/src/assets/logos/pod.svg";
+import creative from "/src/assets/logos/creative.svg";
+import pomodoro from "/src/assets/logos/pomodoro.svg";
+import maker from "/src/assets/logos/maker.svg";
+import coffeeroasters from "/src/assets/logos/coffeeroasters.svg";
+import mastercraft from "/src/assets/logos/mastercraft.svg";
+import crowdfund from "/src/assets/logos/crowdfund.svg";
+import typemaster from "/src/assets/logos/typemaster.svg";
 
 const JobsData = [
   {
     id: 1,
     company: "Scoot",
-    logo: { scoot },
+    logo: scoot,
     logoBackground: "hsl(36, 87%, 49%)",
     position: "Senior Software Engineer",
     postedAt: "5h ago",
@@ -49,7 +49,7 @@ const JobsData = [
   {
     id: 2,
     company: "Blogr",
-    logo: { blogr },
+    logo: blogr,
     logoBackground: "hsl(12, 79%, 52%)",
     position: "Haskell and PureScript Dev",
     postedAt: "20h ago",
@@ -83,7 +83,7 @@ const JobsData = [
   {
     id: 3,
     company: "Vector",
-    logo: { vector },
+    logo: vector,
     logoBackground: "hsl(235, 10%, 23%)",
     position: "Midlevel Back End Engineer",
     postedAt: "1d ago",
@@ -116,7 +116,7 @@ const JobsData = [
   {
     id: 4,
     company: "Office Lite",
-    logo: { officelite },
+    logo: officelite,
     logoBackground: "hsl(227, 62%, 48%)",
     position: "Senior Application Engineer",
     postedAt: "2d ago",
@@ -151,7 +151,7 @@ const JobsData = [
   {
     id: 5,
     company: "Pod",
-    logo: { pod },
+    logo: pod,
     logoBackground: "hsl(216, 46%, 14%)",
     position: "Remote DevOps Engineer",
     postedAt: "2d ago",
@@ -190,7 +190,7 @@ const JobsData = [
   {
     id: 6,
     company: "Creative",
-    logo: { creative },
+    logo: creative,
     logoBackground: "hsl(295, 55%, 21%)",
     position: "Desktop Support Manager",
     postedAt: "4d ago",
@@ -227,7 +227,7 @@ const JobsData = [
   {
     id: 7,
     company: "Pomodoro",
-    logo: { pomodoro },
+    logo: pomodoro,
     logoBackground: "hsl(254, 71%, 45%)",
     position: "iOS Engineer",
     postedAt: "1w ago",
@@ -261,7 +261,7 @@ const JobsData = [
   {
     id: 8,
     company: "Maker",
-    logo: { maker },
+    logo: maker,
     logoBackground: "hsl(218, 58%, 31%)",
     position: "Senior EJB Developer",
     postedAt: "1w ago",
@@ -295,7 +295,7 @@ const JobsData = [
   {
     id: 9,
     company: "Coffeeroasters",
-    logo: { coffeeroasters },
+    logo: coffeeroasters,
     logoBackground: "hsl(29, 60%, 87%)",
     position: "Senior Frontend Developer",
     postedAt: "1w ago",
@@ -329,7 +329,7 @@ const JobsData = [
   {
     id: 10,
     company: "Mastercraft",
-    logo: { mastercraft },
+    logo: mastercraft,
     logoBackground: "hsl(0, 0%, 12%)",
     position: "App & Website Designer",
     postedAt: "2w ago",
@@ -365,7 +365,7 @@ const JobsData = [
   {
     id: 11,
     company: "Crowdfund",
-    logo: { crowdfund },
+    logo: crowdfund,
     logoBackground: "hsl(157, 57%, 50%)",
     position: "Fullstack Developer",
     postedAt: "1mo ago",
@@ -401,7 +401,7 @@ const JobsData = [
   {
     id: 12,
     company: "Typemaster",
-    logo: { typemaster },
+    logo: typemaster,
     logoBackground: "hsl(22, 89%, 52%)",
     position: "Technical Lead Engineer",
     postedAt: "1mo ago",
@@ -436,7 +436,7 @@ const JobsData = [
   {
     id: 13,
     company: "Crowdfund",
-    logo: { crowdfund },
+    logo: crowdfund,
     logoBackground: "hsl(157, 57%, 50%)",
     position: "Front-end Developer",
     postedAt: "1mo ago",
@@ -471,7 +471,7 @@ const JobsData = [
   {
     id: 14,
     company: "Coffeeroasters",
-    logo: { coffeeroasters },
+    logo: coffeeroasters,
     logoBackground: "hsl(29, 60%, 87%)",
     position: "Junior Full-Stack Developer",
     postedAt: "1mo ago",
@@ -506,7 +506,7 @@ const JobsData = [
   {
     id: 15,
     company: "Blogr",
-    logo: { blogr },
+    logo: blogr,
     logoBackground: "hsl(12, 79%, 52%)",
     position: "Midweight Front-end Developer",
     postedAt: "1mo ago",

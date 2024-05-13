@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "./Components/Header";
-
+import { BrowserRouter } from "react-router-dom";
+import JobRoutes from "./Components/JobRoutes";
 function App() {
   const [isToggled, setIsToggled] = useState(false);
   const [searchValue, setSearchValue] = useState("");
@@ -8,18 +9,27 @@ function App() {
   const [isChecked, setIsChecked] = useState(false);
 
   return (
-    <div className={`h-full ${isToggled ? "bg-[#121721]" : "bg-[#F4F6F8]"}`}>
-      <Header
-        isToggled={isToggled}
-        setIsToggled={setIsToggled}
-        searchValue={searchValue}
-        onSearch={setSearchValue}
-        locationSearchValue={locationSearchValue}
-        onLocationSearch={setLocationSearchValue}
-        isChecked={isChecked}
-        setIsChecked={setIsChecked}
-      />
-    </div>
+    <BrowserRouter>
+      <div
+        className={` min-h-[100vh] ${
+          isToggled ? "bg-[#121721]" : "bg-[#F4F6F8]"
+        }`}
+      >
+        <Header
+          isToggled={isToggled}
+          setIsToggled={setIsToggled}
+        />
+        <JobRoutes
+          isToggled={isToggled}
+          searchValue={searchValue}
+          locationSearchValue={locationSearchValue}
+          isChecked={isChecked}
+          onSearch={setSearchValue}
+          onLocationSearch={setLocationSearchValue}
+          setIsChecked={setIsChecked}
+        />
+      </div>
+    </BrowserRouter>
   );
 }
 
