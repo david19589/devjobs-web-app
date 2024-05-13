@@ -105,7 +105,7 @@ function Filter(props: {
               props.onSearch(titleSearch);
               props.onLocationSearch(locationSearch);
             }}
-            className="px-[30px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
+            className="hidden tablet:flex px-[30px] py-[16px] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded"
           >
             Search
           </button>
