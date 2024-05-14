@@ -6,6 +6,7 @@ export default {
     screens: {
       tablet: "768px",
       desktop: "1440px",
+      neddedWidth: "2012px",
     },
   },
   plugins: [],

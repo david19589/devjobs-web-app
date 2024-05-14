@@ -24,7 +24,7 @@ function JobRoutes(props: {
 }) {
   const location = useLocation();
   return (
-    <>
+    <div className="min-h-[100vh] relative">
       <ScrollToTop />
       <Routes location={location} key={location.pathname}>
         <Route
@@ -46,7 +46,7 @@ function JobRoutes(props: {
           element={<Detail isToggled={props.isToggled} />}
         ></Route>
       </Routes>
-    </>
+    </div>
   );
 }
 

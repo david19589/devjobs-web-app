@@ -15,7 +15,7 @@ function Home(props: {
   const [visibleJobs, setVisibleJobs] = useState(6);
 
   const filteredJobs = Data.filter((job) => {
-    const matchedSearch = job.company
+    const matchedSearch = job.position
       .toLowerCase()
       .includes(props.searchValue.toLowerCase());
     const matchedLocation = job.location
