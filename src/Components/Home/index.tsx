@@ -73,7 +73,7 @@ function Home(props: {
                   <h1
                     className={`${
                       props.isToggled && "text-[#FFF]"
-                    } w-full font-[700] text-[20px] leading-[24.8px] mb-[17px] group group-hover:text-[#6E8098]`}
+                    } neddedWidth2:w-[190px] mobile:w-[249px] font-[700] text-[20px] leading-[24.8px] mb-[17px] group group-hover:text-[#6E8098]`}
                   >
                     {item.position}
                   </h1>

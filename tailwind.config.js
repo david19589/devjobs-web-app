@@ -4,9 +4,11 @@ export default {
   theme: {
     extend: {},
     screens: {
+      mobile: "372px",
       tablet: "768px",
       desktop: "1440px",
       neddedWidth: "2012px",
+      neddedWidth2: "280px",
     },
   },
   plugins: [],
