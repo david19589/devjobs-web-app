@@ -14,7 +14,7 @@ function Detail(props: { isToggled: boolean }) {
           <div
             className={`${
               props.isToggled ? "bg-[#19202D]" : "bg-[#FFF]"
-            } desktop:w-[730px] tablet:pr-[40px] tablet:mb-[32px] tablet:px-0 tablet:pb-0 tablet:w-[689px] tablet:flex-row tablet:justify-between flex flex-col items-center w-[338px] mb-[24px] mt-[-20px] rounded-lg px-[42px] pb-[24px]`}
+            } desktop:max-w-[730px] tablet:pr-[40px] tablet:mb-[32px] tablet:px-0 tablet:pb-0 tablet:max-w-[689px] tablet:flex-row tablet:justify-between flex flex-col items-center w-full max-w-[338px] mb-[24px] mt-[-20px] rounded-lg px-[42px] pb-[24px]`}
           >
             <div className="tablet:flex tablet:items-center">
               <div
@@ -47,7 +47,7 @@ function Detail(props: { isToggled: boolean }) {
           <div
             className={`${
               props.isToggled ? "bg-[#19202D]" : "bg-[#FFF]"
-            } desktop:w-[730px] tablet:w-[689px] flex flex-col items-center w-[338px] mb-[49px] rounded-lg px-[42px] py-[40px] `}
+            } desktop:max-w-[730px] tablet:max-w-[689px] flex flex-col items-center w-full max-w-[338px] mb-[49px] rounded-lg px-[42px] py-[40px] `}
           >
             <div className="tablet:flex tablet:items-center tablet:justify-between tablet:mb-[40px] tablet:w-full">
               <div className="tablet:mb-0 mb-[50px]">
