@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        className={` min-h-[100vh] ${
+        className={` min-h-[100vh] min-w-fit tablet:w-full ${
           isToggled ? "bg-[#121721]" : "bg-[#F4F6F8]"
         }`}
       >

@@ -41,14 +41,14 @@ function Home(props: {
           setIsChecked={props.setIsChecked}
         />
       </div>
-      <div className="flex flex-wrap justify-center gap-[60px] max-w-[1440px] mr-auto ml-auto px-[24px] relative">
+      <div className="flex flex-wrap justify-center gap-[60px] max-w-[1440px] mr-auto ml-auto px-[18px] relative">
         {filteredJobs.slice(0, visibleJobs).map((item, index) => {
           return (
             <Link key={index} to={`/job/${item.id}`}>
               <div
                 className={`${
                   props.isToggled ? "bg-[#19202D]" : "bg-[#FFF]"
-                } flex cursor-pointer hover:shadow-md hover:shadow-gray-400 hover:scale-105 w-full max-w-[336px] h-[272px] rounded-lg pr-[55px] pl-[32px] pb-[32px] group`}
+                } flex cursor-pointer hover:shadow-md hover:shadow-gray-400 hover:scale-105 w-[336px] h-[272px] rounded-lg pr-[55px] pl-[32px] pb-[32px] group`}
               >
                 <div>
                   <div
@@ -93,7 +93,7 @@ function Home(props: {
             onClick={() => {
               setVisibleJobs(visibleJobs + 3);
             }}
-            className="px-[30px] py-[16px] mx-[30%] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded mb-[61px]"
+            className="px-[30px] py-[16px] mx-[29%] font-[700] text-[15px] leading-[19.84px] bg-[#5964E0] text-[#FFF] outline-none rounded mb-[61px]"
           >
             Load More
           </button>
